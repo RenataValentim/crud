@@ -1,0 +1,186 @@
+:root {
+    --primary-light: #e6d5f7;
+    --primary: #c9a7eb;
+    --primary-dark: #a57acc;
+    --text-color: #5a3472;
+    --bg-white: #ffffff;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --logo-height: 100px;
+    --header-height: 80px;
+    --aside-width: 230px;
+    --footer-height: 50px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Fundo principal */
+body {
+    background: var(--bg-white);
+    color: var(--text-color);
+}
+
+/* Layout Principal */
+.app {
+    display: grid;
+    grid-template-columns: var(--aside-width) 1fr;
+    grid-template-rows: var(--header-height) 1fr var(--footer-height);
+    grid-template-areas:
+        "logo header"
+        "menu content"
+        "menu footer";
+    height: 100vh;
+}
+
+/* Logo */
+.logo {
+    grid-area: logo;
+    background: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bg-white);
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    border-bottom-right-radius: 15px;
+}
+
+/* Header */
+header.header {
+    grid-area: header;
+    background: var(--primary-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    box-shadow: var(--shadow);
+}
+
+/* Menu */
+.menu-area {
+    grid-area: menu;
+    background: var(--primary);
+    padding: 15px;
+    box-shadow: var(--shadow);
+    border-top-right-radius: 15px;
+}
+
+.menu a {
+    display: block;
+    text-decoration: none;
+    color: var(--bg-white);
+    padding: 12px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Conteúdo */
+main.content {
+    grid-area: content;
+    padding: 20px;
+    background: var(--bg-white);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+/* Footer */
+footer.footer {
+    grid-area: footer;
+    background: var(--primary-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--bg-white);
+    box-shadow: var(--shadow);
+    border-top-left-radius: 15px;
+}
+
+/* Botões */
+button {
+    background: var(--primary-dark);
+    color: var(--bg-white);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: var(--primary);
+    transform: scale(1.05);
+}
+
+/* Inputs */
+input {
+    padding: 10px;
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    margin: 5px 0;
+    width: 100%;
+    font-size: 1rem;
+}
+
+input:focus {
+    border-color: var(--primary-dark);
+    outline: none;
+    box-shadow: 0px 0px 8px rgba(169, 123, 204, 0.5);
+}
+
+/* Estilização da Tabela de Usuários */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background: var(--primary-light);
+    color: var(--text-color);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+td {
+    border-bottom: 1px solid var(--primary-light);
+}
+
+/* Ícones de Editar e Excluir */
+.action-icons {
+    display: flex;
+    gap: 12px; /* Espaçamento entre os ícones */
+}
+
+.action-icons button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.4rem;
+    color: var(--primary-dark);
+    transition: 0.3s;
+}
+
+.action-icons button:hover {
+    color: var(--primary);
+    transform: scale(1.1);
+}
